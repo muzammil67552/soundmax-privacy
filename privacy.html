@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy - SoundMax</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      color: #1e293b;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+      background: #f8fafc;
+    }
+    .card {
+      background: #ffffff;
+      padding: 36px;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+      border: 1px solid #e2e8f0;
+    }
+    h1 { color: #0f172a; margin-bottom: 8px; }
+    h2 { color: #1e293b; margin-top: 24px; margin-bottom: 12px; font-size: 1.25rem; }
+    p, li { color: #475569; font-size: 0.95rem; }
+    ul { padding-left: 20px; margin-bottom: 16px; }
+    .updated { font-size: 0.85rem; color: #94a3b8; margin-bottom: 24px; }
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: #dbeafe;
+      color: #1e40af;
+      font-weight: 600;
+      font-size: 0.8rem;
+      margin-bottom: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <span class="badge">Privacy Policy</span>
+    <h1>SoundMax - Audio Booster & Equalizer</h1>
+    <div class="updated">Last updated: November 2026</div>
+
+    <p>
+      Your privacy is our top priority. SoundMax is engineered with a strict <strong>zero-data-collection</strong> architecture. 
+      This Privacy Policy explains how our extension operates and why your personal data is never at risk.
+    </p>
+
+    <h2>1. Data Collection & Telemetry</h2>
+    <p>
+      <strong>SoundMax does not collect, log, track, or transmit any personal data, audio recordings, or browsing information.</strong>
+    </p>
+    <ul>
+      <li><strong>No Audio Recording:</strong> SoundMax amplifies tab audio locally in real-time using the browser's native Web Audio API. Captured streams never leave your device or reach any external server.</li>
+      <li><strong>No Browsing History:</strong> The extension does not inspect URLs or track the websites you visit.</li>
+      <li><strong>No Remote Analytics:</strong> We do not include tracking pixels, Google Analytics, or third-party advertising SDKs.</li>
+    </ul>
+
+    <h2>2. Browser Permissions Justification</h2>
+    <ul>
+      <li><strong>tabCapture:</strong> Used strictly to route tab audio into the local Web Audio GainNode for volume amplification.</li>
+      <li><strong>offscreen:</strong> Required under Chrome's Manifest V3 to host the audio processing pipeline in an offscreen document without UI disruption.</li>
+      <li><strong>storage:</strong> Used strictly on your local device to remember your volume level, equalizer preset, and dark mode preference.</li>
+      <li><strong>tabs:</strong> Used to display tabs currently outputting sound so you can quickly switch tabs.</li>
+      <li><strong>activeTab:</strong> Grants temporary access to the current tab when the popup is clicked.</li>
+    </ul>
+
+    <h2>3. Third-Party Services</h2>
+    <p>
+      The extension operates entirely locally. If you choose to support development by purchasing Pro Boost through our hosted checkout (e.g. Lemon Squeezy), payment information is handled directly and securely by the payment processor. We never see or store your financial details.
+    </p>
+
+    <h2>4. Contact</h2>
+    <p>
+      If you have questions about SoundMax or this Privacy Policy, please open an issue on our GitHub repository.
+    </p>
+  </div>
+</body>
+</html>
+
