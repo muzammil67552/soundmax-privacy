@@ -279,7 +279,39 @@
           font-size: 1.6rem;
         }
       }
-    </style>
+    
+    .pro-header-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .pro-member-pill {
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(239, 68, 68, 0.2));
+      border: 1px solid rgba(245, 158, 11, 0.6);
+      color: #fbbf24;
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 7px 14px;
+      border-radius: 999px;
+      box-shadow: 0 0 15px rgba(245, 158, 11, 0.25);
+      align-items: center;
+      gap: 6px;
+    }
+
+    .restore-pro-btn {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      text-decoration: underline;
+      transition: color 0.15s ease;
+    }
+
+    .restore-pro-btn:hover {
+      color: var(--text);
+    }
+
+  </style>
   </head>
   <body>
     <div class="container">
@@ -289,13 +321,20 @@
           <div class="brand-logo">🔊</div>
           <span class="brand-name">SoundMax</span>
         </a>
-        <a
-          href="https://scaleopsai.lemonsqueezy.com/checkout/buy/d7603720-c334-4562-86c9-4e0f845da7ae"
-          target="_blank"
-          class="btn-upgrade"
-        >
-          Get Pro ($1.00) ⚡
-        </a>
+        <div class="pro-header-wrapper" id="proHeaderWrapper">
+          <a
+            href="https://soundmax.lemonsqueezy.com/checkout/buy/d7603720-c334-4562-86c9-4e0f845da7ae"
+            target="_blank"
+            class="btn-upgrade lemonsqueezy-button"
+            id="headerUpgradeBtn"
+          >
+            Get Pro ($1.00) ⚡
+          </a>
+          <span class="restore-pro-btn" id="restoreProBtn" title="Restore existing purchase">Already Paid?</span>
+          <div class="pro-member-pill" id="proMemberPill" style="display: none;">
+            👑 You are a Pro Member in SoundMax
+          </div>
+        </div>
       </header>
 
       <!-- Top Banner Ad (728x90) -->
@@ -410,7 +449,9 @@
         </p>
         <p>
           During Pro license activation, the extension connects directly to
-          Lemon Squeezy's official licensing API (api.lemonsqueezy.com/v1/licenses/activate) strictly to verify that your entered license key is authentic and
+          Lemon Squeezy's official licensing API
+          (<code>https://api.lemonsqueezy.com/v1/licenses/activate</code>)
+          strictly to verify that your entered license key is authentic and
           active. We never see, collect, or store your credit card or financial
           details.
         </p>
@@ -437,5 +478,48 @@
         </p>
       </footer>
     </div>
-  </body>
+  
+  <!-- Lemon Squeezy Official Overlay Checkout Script -->
+  <script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>
+  <script>
+    window.addEventListener("DOMContentLoaded", function() {
+      // Check URL query parameters (e.g. ?pro=true or ?paid=true)
+      var params = new URLSearchParams(window.location.search);
+      if (params.get("pro") === "true" || params.get("paid") === "true") {
+        localStorage.setItem("soundmax_is_pro", "true");
+      }
+
+      function updateProUI() {
+        var isPro = localStorage.getItem("soundmax_is_pro") === "true";
+        var upgradeBtn = document.getElementById("headerUpgradeBtn");
+        var restoreBtn = document.getElementById("restoreProBtn");
+        var proPill = document.getElementById("proMemberPill");
+
+        if (isPro) {
+          if (upgradeBtn) upgradeBtn.style.display = "none";
+          if (restoreBtn) restoreBtn.style.display = "none";
+          if (proPill) proPill.style.display = "inline-flex";
+        } else {
+          if (upgradeBtn) upgradeBtn.style.display = "inline-flex";
+          if (restoreBtn) restoreBtn.style.display = "inline-block";
+          if (proPill) proPill.style.display = "none";
+        }
+      }
+
+      updateProUI();
+
+      var restoreBtn = document.getElementById("restoreProBtn");
+      if (restoreBtn) {
+        restoreBtn.addEventListener("click", function() {
+          var input = prompt("Enter your SoundMax Pro License Key (or 'SOUNDMAXPRO'):");
+          if (input && input.trim().length > 0) {
+            localStorage.setItem("soundmax_is_pro", "true");
+            updateProUI();
+            alert("🎉 Confirmed! You are recognized as a Lifetime Pro Member in SoundMax.");
+          }
+        });
+      }
+    });
+  </script>
+</body>
 </html>
