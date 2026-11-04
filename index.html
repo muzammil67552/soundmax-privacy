@@ -3,23 +3,37 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Privacy Policy - SoundMax Audio Booster</title>
+    <title>SoundMax - Official Privacy Policy & Audio Booster Hub</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <style>
       :root {
-        --bg: #0b0f19;
-        --card-bg: rgba(17, 24, 39, 0.75);
-        --card-border: rgba(255, 255, 255, 0.08);
-        --text: #f3f4f6;
-        --text-muted: #9ca3af;
-        --accent: #3b82f6;
-        --accent-gradient: linear-gradient(135deg, #3b82f6, #8b5cf6);
-        --glow: rgba(59, 130, 246, 0.2);
+        --bg-dark: #0a0e17;
+        --bg-surface: rgba(16, 24, 39, 0.75);
+        --bg-surface-elevated: rgba(23, 33, 54, 0.85);
+        --border-subtle: rgba(255, 255, 255, 0.08);
+        --border-bright: rgba(59, 130, 246, 0.35);
+        --text-main: #f8fafc;
+        --text-muted: #94a3b8;
+        --text-dim: #64748b;
+        --brand-blue: #3b82f6;
+        --brand-purple: #8b5cf6;
+        --brand-cyan: #06b6d4;
+        --brand-amber: #f59e0b;
+        --brand-emerald: #10b981;
+        --gradient-primary: linear-gradient(
+          135deg,
+          #3b82f6 0%,
+          #8b5cf6 50%,
+          #d946ef 100%
+        );
+        --gradient-gold: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
+        --shadow-glow: 0 0 35px rgba(59, 130, 246, 0.25);
+        --shadow-gold: 0 0 30px rgba(245, 158, 11, 0.3);
       }
 
       * {
@@ -27,7 +41,7 @@
         margin: 0;
         padding: 0;
         font-family:
-          "Inter",
+          "Plus Jakarta Sans",
           -apple-system,
           BlinkMacSystemFont,
           "Segoe UI",
@@ -36,83 +50,290 @@
       }
 
       body {
-        background-color: var(--bg);
+        background-color: var(--bg-dark);
         background-image:
           radial-gradient(
-            at 0% 0%,
-            rgba(59, 130, 246, 0.15) 0px,
-            transparent 50%
+            circle at 15% 10%,
+            rgba(59, 130, 246, 0.18) 0%,
+            transparent 45%
           ),
           radial-gradient(
-            at 100% 100%,
-            rgba(139, 92, 246, 0.12) 0px,
+            circle at 85% 25%,
+            rgba(139, 92, 246, 0.16) 0%,
+            transparent 40%
+          ),
+          radial-gradient(
+            circle at 50% 80%,
+            rgba(6, 182, 212, 0.12) 0%,
             transparent 50%
           );
         background-attachment: fixed;
-        color: var(--text);
+        color: var(--text-main);
         line-height: 1.7;
-        padding: 40px 20px;
+        padding: 30px 20px 80px;
         min-height: 100vh;
+        overflow-x: hidden;
       }
 
       .container {
-        max-width: 860px;
+        max-width: 920px;
         margin: 0 auto;
       }
 
-      /* Top Navigation / Brand Header */
-      .header {
+      /* Animated Top Navigation */
+      .navbar {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        padding: 14px 22px;
+        background: rgba(15, 23, 42, 0.7);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid var(--border-subtle);
+        border-radius: 18px;
         margin-bottom: 28px;
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+        animation: fadeInDown 0.6s ease-out;
       }
 
       .brand {
         display: flex;
         align-items: center;
-        gap: 12px;
+        gap: 14px;
         text-decoration: none;
       }
 
-      .brand-logo {
-        width: 40px;
-        height: 40px;
-        border-radius: 10px;
-        background: var(--accent-gradient);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 20px;
-        box-shadow: 0 0 20px var(--glow);
+      .brand-icon-wrapper {
+        position: relative;
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 0 18px rgba(59, 130, 246, 0.4);
       }
 
-      .brand-name {
-        font-size: 1.4rem;
+      .brand-icon {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .brand-meta {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .brand-title {
+        font-size: 1.35rem;
         font-weight: 800;
         letter-spacing: -0.5px;
-        background: var(--accent-gradient);
+        background: var(--gradient-primary);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
       }
 
+      .brand-subtitle {
+        font-size: 0.75rem;
+        color: var(--text-muted);
+        font-weight: 500;
+        letter-spacing: 0.3px;
+      }
+
+      /* Action Buttons */
+      .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
       .btn-upgrade {
-        background: var(--accent-gradient);
+        background: var(--gradient-primary);
         color: #fff;
-        padding: 8px 16px;
-        border-radius: 8px;
-        font-size: 0.85rem;
-        font-weight: 600;
+        padding: 10px 20px;
+        border-radius: 12px;
+        font-size: 0.88rem;
+        font-weight: 700;
         text-decoration: none;
-        box-shadow: 0 4px 14px rgba(59, 130, 246, 0.3);
-        transition: transform 0.15s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        box-shadow: 0 6px 20px rgba(59, 130, 246, 0.35);
+        transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .btn-upgrade::after {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(
+          60deg,
+          transparent,
+          rgba(255, 255, 255, 0.2),
+          transparent
+        );
+        transform: rotate(30deg);
+        animation: shimmer 4s infinite;
       }
 
       .btn-upgrade:hover {
-        transform: translateY(-1px);
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(59, 130, 246, 0.5);
       }
 
-      /* Ad Container (Responsive) */
+      /* Pro Status Activated Pill */
+      .pro-status-badge {
+        display: none; /* Managed dynamically by JavaScript */
+        align-items: center;
+        gap: 8px;
+        background: linear-gradient(
+          135deg,
+          rgba(245, 158, 11, 0.15),
+          rgba(239, 68, 68, 0.15)
+        );
+        border: 1px solid rgba(245, 158, 11, 0.5);
+        color: #fbbf24;
+        padding: 8px 16px;
+        border-radius: 999px;
+        font-size: 0.85rem;
+        font-weight: 700;
+        letter-spacing: 0.3px;
+        box-shadow: var(--shadow-gold);
+        animation: pulseGlow 3s infinite alternate;
+      }
+
+      /* Dynamic Hero Pro Banner */
+      .pro-member-banner {
+        display: none; /* Managed by JS */
+        background: linear-gradient(
+          135deg,
+          rgba(245, 158, 11, 0.12),
+          rgba(220, 38, 38, 0.12)
+        );
+        border: 1px solid rgba(245, 158, 11, 0.4);
+        border-radius: 20px;
+        padding: 22px 28px;
+        margin-bottom: 28px;
+        backdrop-filter: blur(12px);
+        box-shadow: 0 15px 35px rgba(245, 158, 11, 0.15);
+        animation: fadeInUp 0.7s ease-out;
+      }
+
+      .pro-banner-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .pro-banner-text h3 {
+        color: #fef08a;
+        font-size: 1.25rem;
+        font-weight: 800;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 4px;
+      }
+
+      .pro-banner-text p {
+        color: #fde68a;
+        font-size: 0.9rem;
+        margin: 0;
+      }
+
+      .pro-lifetime-badge {
+        background: #f59e0b;
+        color: #1e1b4b;
+        font-size: 0.78rem;
+        font-weight: 800;
+        padding: 6px 14px;
+        border-radius: 999px;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);
+      }
+
+      /* Visual Hero Showcase Banner */
+      .hero-showcase {
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+        border: 1px solid var(--border-subtle);
+        margin-bottom: 28px;
+        box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.6);
+        background: #0f172a;
+        transition:
+          transform 0.3s ease,
+          border-color 0.3s ease;
+      }
+
+      .hero-showcase:hover {
+        border-color: var(--border-bright);
+        transform: translateY(-2px);
+      }
+
+      .hero-showcase img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.5s ease;
+      }
+
+      .hero-showcase:hover img {
+        transform: scale(1.01);
+      }
+
+      /* Feature Highlights Grid */
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 16px;
+        margin-bottom: 30px;
+      }
+
+      .feature-card {
+        background: var(--bg-surface);
+        border: 1px solid var(--border-subtle);
+        border-radius: 16px;
+        padding: 20px;
+        backdrop-filter: blur(12px);
+        transition: all 0.25s ease;
+      }
+
+      .feature-card:hover {
+        background: var(--bg-surface-elevated);
+        border-color: rgba(59, 130, 246, 0.3);
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      }
+
+      .feature-card-icon {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+        display: inline-block;
+      }
+
+      .feature-card h4 {
+        font-size: 1rem;
+        color: #fff;
+        font-weight: 700;
+        margin-bottom: 6px;
+      }
+
+      .feature-card p {
+        font-size: 0.85rem;
+        color: var(--text-muted);
+        line-height: 1.5;
+        margin: 0;
+      }
+
+      /* Ad Containers */
       .ad-banner-wrapper {
         margin: 24px 0;
         text-align: center;
@@ -127,215 +348,401 @@
         max-width: 728px;
         min-height: 90px;
         background: rgba(17, 24, 39, 0.4);
-        border: 1px dashed var(--card-border);
-        border-radius: 10px;
+        border: 1px dashed var(--border-subtle);
+        border-radius: 12px;
         display: flex;
         align-items: center;
         justify-content: center;
-        color: var(--text-muted);
-        font-size: 0.8rem;
+        color: var(--text-dim);
+        font-size: 0.78rem;
         letter-spacing: 0.5px;
         overflow: hidden;
       }
 
       .ad-slot-square {
-        max-width: 300px;
-        min-height: 250px;
+        max-width: 320px;
+        min-height: 50px;
         margin: 20px auto;
       }
 
       /* Main Content Glass Card */
       .card {
-        background: var(--card-bg);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        border: 1px solid var(--card-border);
-        border-radius: 16px;
-        padding: 44px;
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        background: var(--bg-surface);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid var(--border-subtle);
+        border-radius: 20px;
+        padding: 42px;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        margin-bottom: 30px;
       }
 
-      .badge {
-        display: inline-block;
-        padding: 4px 12px;
+      .badge-compliance {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 5px 14px;
         border-radius: 999px;
-        background: rgba(59, 130, 246, 0.15);
-        border: 1px solid rgba(59, 130, 246, 0.3);
+        background: rgba(59, 130, 246, 0.12);
+        border: 1px solid rgba(59, 130, 246, 0.35);
         color: #60a5fa;
-        font-weight: 600;
-        font-size: 0.8rem;
-        margin-bottom: 14px;
+        font-weight: 700;
+        font-size: 0.78rem;
+        margin-bottom: 16px;
         text-transform: uppercase;
-        letter-spacing: 0.5px;
+        letter-spacing: 0.8px;
       }
 
       h1 {
-        font-size: 2.1rem;
+        font-size: 2.2rem;
         font-weight: 800;
         color: #fff;
-        letter-spacing: -0.5px;
-        margin-bottom: 6px;
+        letter-spacing: -0.6px;
+        margin-bottom: 8px;
       }
 
       .last-updated {
-        font-size: 0.85rem;
+        font-size: 0.88rem;
         color: var(--text-muted);
         margin-bottom: 28px;
-        padding-bottom: 20px;
-        border-bottom: 1px solid var(--card-border);
+        padding-bottom: 18px;
+        border-bottom: 1px solid var(--border-subtle);
       }
 
       h2 {
-        font-size: 1.25rem;
+        font-size: 1.3rem;
         font-weight: 700;
         color: #fff;
-        margin-top: 32px;
-        margin-bottom: 12px;
+        margin-top: 36px;
+        margin-bottom: 14px;
         display: flex;
         align-items: center;
-        gap: 8px;
+        gap: 10px;
       }
 
       h2::before {
         content: "";
         display: inline-block;
         width: 4px;
-        height: 18px;
-        background: var(--accent);
+        height: 20px;
+        background: var(--brand-blue);
         border-radius: 2px;
       }
 
       p {
         color: var(--text-muted);
-        font-size: 0.96rem;
-        margin-bottom: 14px;
+        font-size: 0.98rem;
+        margin-bottom: 16px;
+        line-height: 1.75;
       }
 
       strong {
-        color: var(--text);
+        color: var(--text-main);
       }
 
       ul {
         list-style: none;
-        margin-bottom: 20px;
+        margin-bottom: 22px;
       }
 
       li {
         position: relative;
-        padding-left: 24px;
+        padding-left: 26px;
         color: var(--text-muted);
         font-size: 0.95rem;
-        margin-bottom: 10px;
+        margin-bottom: 12px;
       }
 
       li::before {
         content: "✓";
         position: absolute;
         left: 0;
-        color: var(--accent);
-        font-weight: 700;
+        color: var(--brand-blue);
+        font-weight: 800;
       }
 
       code {
-        background: rgba(0, 0, 0, 0.35);
-        border: 1px solid var(--card-border);
+        background: rgba(0, 0, 0, 0.4);
+        border: 1px solid var(--border-subtle);
         color: #93c5fd;
-        padding: 2px 6px;
-        border-radius: 4px;
-        font-size: 0.88rem;
+        padding: 3px 7px;
+        border-radius: 5px;
+        font-size: 0.86rem;
       }
 
       .highlight-box {
-        background: rgba(59, 130, 246, 0.08);
-        border-left: 3px solid var(--accent);
-        padding: 16px 20px;
-        border-radius: 0 8px 8px 0;
-        margin: 20px 0;
+        background: linear-gradient(
+          90deg,
+          rgba(59, 130, 246, 0.1) 0%,
+          rgba(139, 92, 246, 0.05) 100%
+        );
+        border-left: 4px solid var(--brand-blue);
+        padding: 18px 22px;
+        border-radius: 0 12px 12px 0;
+        margin: 22px 0;
       }
 
       .highlight-box p {
         margin-bottom: 0;
-        color: #bfdbfe;
+        color: #dbeafe;
+        font-size: 0.96rem;
+      }
+
+      /* Developer Profile Showcase Card */
+      .dev-card {
+        background: linear-gradient(
+          135deg,
+          rgba(30, 41, 59, 0.7) 0%,
+          rgba(15, 23, 42, 0.8) 100%
+        );
+        border: 1px solid var(--border-subtle);
+        border-radius: 18px;
+        padding: 26px;
+        margin-top: 36px;
+        display: flex;
+        gap: 22px;
+        align-items: center;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      .dev-avatar {
+        width: 68px;
+        height: 68px;
+        border-radius: 50%;
+        background: var(--gradient-primary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.8rem;
+        color: #fff;
+        box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+        flex-shrink: 0;
+      }
+
+      .dev-details h3 {
+        font-size: 1.2rem;
+        font-weight: 800;
+        color: #fff;
+        margin-bottom: 4px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .dev-role {
+        font-size: 0.82rem;
+        color: #60a5fa;
+        font-weight: 600;
+        margin-bottom: 8px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .dev-bio {
+        font-size: 0.9rem;
+        color: var(--text-muted);
+        line-height: 1.6;
+        margin-bottom: 10px;
+      }
+
+      .dev-contact {
+        font-size: 0.85rem;
+        color: var(--text-dim);
+      }
+
+      .dev-contact a {
+        color: #93c5fd;
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      .dev-contact a:hover {
+        text-decoration: underline;
       }
 
       /* Footer */
       .footer {
         text-align: center;
-        margin-top: 40px;
-        color: var(--text-muted);
+        margin-top: 45px;
+        color: var(--text-dim);
         font-size: 0.85rem;
       }
 
       .footer a {
-        color: var(--accent);
+        color: var(--brand-blue);
         text-decoration: none;
+        transition: color 0.15s ease;
       }
 
-      @media (max-width: 640px) {
+      .footer a:hover {
+        color: #93c5fd;
+      }
+
+      /* Animations */
+      @keyframes shimmer {
+        0% {
+          transform: translateX(-150%) rotate(30deg);
+        }
+        100% {
+          transform: translateX(150%) rotate(30deg);
+        }
+      }
+
+      @keyframes pulseGlow {
+        0% {
+          box-shadow: 0 0 15px rgba(245, 158, 11, 0.2);
+        }
+        100% {
+          box-shadow: 0 0 30px rgba(245, 158, 11, 0.5);
+        }
+      }
+
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-15px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(15px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (max-width: 680px) {
+        body {
+          padding: 15px 12px 60px;
+        }
         .card {
-          padding: 24px;
+          padding: 24px 18px;
         }
         h1 {
-          font-size: 1.6rem;
+          font-size: 1.7rem;
+        }
+        .dev-card {
+          flex-direction: column;
+          text-align: center;
+          gap: 14px;
+        }
+        .navbar {
+          flex-direction: column;
+          gap: 14px;
+          align-items: stretch;
+          text-align: center;
+        }
+        .brand {
+          justify-content: center;
+        }
+        .nav-actions {
+          justify-content: center;
         }
       }
-    
-    .pro-header-wrapper {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .pro-member-pill {
-      background: linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(239, 68, 68, 0.2));
-      border: 1px solid rgba(245, 158, 11, 0.6);
-      color: #fbbf24;
-      font-size: 0.85rem;
-      font-weight: 700;
-      padding: 7px 14px;
-      border-radius: 999px;
-      box-shadow: 0 0 15px rgba(245, 158, 11, 0.25);
-      align-items: center;
-      gap: 6px;
-    }
-
-    .restore-pro-btn {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      cursor: pointer;
-      text-decoration: underline;
-      transition: color 0.15s ease;
-    }
-
-    .restore-pro-btn:hover {
-      color: var(--text);
-    }
-
-  </style>
+    </style>
   </head>
   <body>
     <div class="container">
-      <!-- Top Header -->
-      <header class="header">
+      <!-- Top Navigation -->
+      <nav class="navbar">
         <a href="#" class="brand">
-          <div class="brand-logo">🔊</div>
-          <span class="brand-name">SoundMax</span>
+          <div class="brand-icon-wrapper">
+            <img
+              src="assets/icon-128.png"
+              alt="SoundMax Logo"
+              class="brand-icon"
+            />
+          </div>
+          <div class="brand-meta">
+            <span class="brand-title">SoundMax</span>
+            <span class="brand-subtitle">Volume Booster & Smart Equalizer</span>
+          </div>
         </a>
-        <div class="pro-header-wrapper" id="proHeaderWrapper">
+
+        <div class="nav-actions">
+          <!-- Shown if user is NOT yet recognized as Pro -->
           <a
             href="https://soundmax.lemonsqueezy.com/checkout/buy/d7603720-c334-4562-86c9-4e0f845da7ae"
             target="_blank"
             class="btn-upgrade lemonsqueezy-button"
-            id="headerUpgradeBtn"
+            id="navUpgradeBtn"
           >
-            Get Pro ($1.00) ⚡
+            Upgrade to Pro ($1.00) ⚡
           </a>
-          <span class="restore-pro-btn" id="restoreProBtn" title="Restore existing purchase">Already Paid?</span>
-          <div class="pro-member-pill" id="proMemberPill" style="display: none;">
-            👑 You are a Pro Member in SoundMax
+
+          <!-- Shown dynamically if user is Pro -->
+          <div class="pro-status-badge" id="navProBadge">
+            <span>👑</span>
+            <span>Lifetime Pro Member</span>
           </div>
         </div>
-      </header>
+      </nav>
+
+      <!-- Dynamic Pro Recognition Hero Banner -->
+      <section class="pro-member-banner" id="proMemberBanner">
+        <div class="pro-banner-content">
+          <div class="pro-banner-text">
+            <h3>👑 Welcome, SoundMax Pro Member!</h3>
+            <p>
+              Your Lifetime Pro license is active on this browser. Enjoy up to
+              1000% ultra-boost and studio EQ presets.
+            </p>
+          </div>
+          <span class="pro-lifetime-badge">Lifetime Verified</span>
+        </div>
+      </section>
+
+      <!-- Visual Showcase Banner -->
+      <div class="hero-showcase">
+        <img
+          src="assets/marquee-promo-1400x560.png"
+          alt="SoundMax Chrome Extension Feature Banner"
+        />
+      </div>
+
+      <!-- Feature Grid -->
+      <div class="features-grid">
+        <div class="feature-card">
+          <span class="feature-card-icon">🔊</span>
+          <h4>600% - 1000% Boost</h4>
+          <p>
+            Overcome low laptop speakers and amplify quiet movies, music, and
+            streams without distortion.
+          </p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-card-icon">🎚️</span>
+          <h4>Studio EQ Presets</h4>
+          <p>
+            One-click Bass Boost for heavy punch and Vocal Clear for enhanced
+            dialogue clarity.
+          </p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-card-icon">📑</span>
+          <h4>Audible Tab Switcher</h4>
+          <p>
+            Identify every tab emitting sound and switch between them instantly
+            in one click.
+          </p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-card-icon">🛡️</span>
+          <h4>100% Client-Side</h4>
+          <p>
+            Zero data collection, zero telemetry, and zero remote code. Fully
+            private Web Audio processing.
+          </p>
+        </div>
+      </div>
 
       <!-- Top Banner Ad (728x90) -->
       <div class="ad-banner-wrapper">
@@ -352,14 +759,14 @@
           </script>
           <script src="https://bauval.org/22/b7a106906bfc451630c51669bee30e29"></script>
           <!-- ============================================== -->
-          <span>Sponsored Advertisement Slot (728x90)</span>
+          <span>Sponsored Advertisement Slot </span>
           <!-- ============================================== -->
         </div>
       </div>
 
       <!-- Main Policy Card -->
       <main class="card">
-        <span class="badge">Official Compliance Document</span>
+        <span class="badge-compliance">Official Compliance Document</span>
         <h1>Privacy Policy</h1>
         <div class="last-updated">
           SoundMax Audio Booster &bull; Effective Date: November 2026
@@ -368,31 +775,34 @@
         <div class="highlight-box">
           <p>
             <strong>Summary:</strong> SoundMax operates entirely locally inside
-            your browser. We do not collect, store, sell, or transmit any audio
-            recordings, browsing logs, or personal information.
+            your browser using the HTML5 Web Audio API. We do not collect,
+            store, sell, or transmit any audio streams, browsing activity, or
+            personal identifiers.
           </p>
         </div>
 
         <h2>1. Real-Time Audio Processing (No Recording)</h2>
         <p>
-          SoundMax captures tab audio using the browser's native
-          <code>tabCapture</code> API and processes it directly on your hardware
-          via the <strong>Web Audio API</strong> (<code>AudioContext</code> and
-          <code>GainNode</code>).
+          SoundMax captures active tab audio using the browser's native
+          <code>chrome.tabCapture</code> API and processes it directly on your
+          local hardware via the
+          <strong>Web Audio API</strong> (<code>AudioContext</code>,
+          <code>GainNode</code>, and <code>BiquadFilterNode</code>).
         </p>
         <ul>
           <li>
-            <strong>Audio Never Leaves Your Machine:</strong> Audio streams are
-            amplified in memory and piped directly to your speakers. No audio is
-            ever recorded, buffered to disk, or sent over the internet.
+            <strong>Audio Never Leaves Your Device:</strong> Audio streams are
+            amplified entirely in temporary system memory and piped straight to
+            your audio output device. No audio data is ever recorded, stored on
+            disk, or streamed externally.
           </li>
           <li>
-            <strong>No Eavesdropping:</strong> Microphones, camera hardware, and
-            input devices are never accessed or requested.
+            <strong>No Eavesdropping:</strong> Microphones, webcams, and
+            hardware inputs are never requested, accessed, or monitored.
           </li>
         </ul>
 
-        <!-- In-Content Rectangle Ad (300x250) -->
+        <!-- In-Content Rectangle Ad (320x50) -->
         <div class="ad-banner-wrapper">
           <div class="ad-slot ad-slot-square">
             <!-- ============================================== -->
@@ -407,119 +817,159 @@
             </script>
             <script src="https://bauval.org/22/f9962b228d982b709fd2c490a8263d36"></script>
             <!-- ============================================== -->
-            <span>Advertisement (300x250)</span>
+            <span>Sponsored Advertisement Slot</span>
             <!-- ============================================== -->
           </div>
         </div>
 
-        <h2>2. Chrome Permissions Justification</h2>
+        <h2>2. Chrome Web Store Permissions Justification</h2>
         <p>
-          SoundMax complies strictly with Google Chrome Web Store's
+          SoundMax adheres strictly to Google Chrome Web Store's
           <strong>Least Privilege</strong> and
           <strong>Single Purpose</strong> policies:
         </p>
         <ul>
           <li>
-            <code>tabCapture</code>: Captures the active audio output stream to
-            increase gain level beyond standard operating limits.
+            <code>tabCapture</code>: Captures the active tab's audio output
+            stream to route it through our high-performance Web Audio gain and
+            equalizer node graph.
           </li>
           <li>
-            <code>offscreen</code>: Required by Google's Manifest V3
-            architecture to host the Web Audio DSP node graph without
-            interrupting browsing.
+            <code>offscreen</code>: Required by Chrome Manifest V3 architecture
+            to host the background Web Audio DSP processing engine without
+            degrading tab performance.
           </li>
           <li>
-            <code>tabs</code>: Detects which tabs are actively emitting sound so
-            you can switch media playback with a single click.
+            <code>tabs</code>: Detects which tabs are actively emitting sound
+            (<code>audible: true</code>) so you can switch between media tabs
+            with one click.
           </li>
           <li>
-            <code>storage</code>: Stores your volume slider level (e.g. 200%)
-            and equalizer preferences locally on your machine.
+            <code>storage</code>: Saves your volume slider levels, preset
+            preferences, and license state locally on your machine via
+            <code>chrome.storage.local</code>.
           </li>
           <li>
-            <code>activeTab</code>: Grants temporary interaction with the
-            current tab upon clicking the extension icon.
+            <code>activeTab</code>: Grants temporary interaction with the active
+            tab when clicking the SoundMax toolbar icon.
           </li>
         </ul>
 
-        <h2>3. Payment & Licensing Data (Lemon Squeezy)</h2>
+        <h2>3. Payment & Licensing Verification (Lemon Squeezy)</h2>
         <p>
-          If you upgrade to SoundMax Pro, payments are handled by our trusted
-          Merchant of Record, <strong>Lemon Squeezy LLC</strong>.
+          SoundMax offers an optional Pro Lifetime Upgrade handled exclusively
+          by our authorized Merchant of Record,
+          <strong>Lemon Squeezy LLC</strong>.
         </p>
         <p>
-          During Pro license activation, the extension connects directly to
-          Lemon Squeezy's official licensing API
-          (<code>https://api.lemonsqueezy.com/v1/licenses/activate</code>)
-          strictly to verify that your entered license key is authentic and
-          active. We never see, collect, or store your credit card or financial
-          details.
-        </p>
-
-        <h2>4. Zero Telemetry & Third-Party Trackers</h2>
-        <p>
-          SoundMax contains no Google Analytics, Facebook Pixels, tracking
-          beacons, or device fingerprinting scripts. Your browsing history is
-          completely private.
+          When you activate a Pro license, the extension verifies the key
+          directly with Lemon Squeezy's official verification API
+          (<code>https://api.lemonsqueezy.com/v1/licenses/activate</code>). We
+          do not collect, process, or store your credit card or financial
+          information.
         </p>
 
-        <h2>5. Contact & Support</h2>
+        <h2>4. Zero Telemetry & No Third-Party Trackers</h2>
         <p>
-          If you have any questions or feedback regarding SoundMax or this
-          Privacy Policy, please reach out via our GitHub repository.
+          The SoundMax extension contains zero Google Analytics, zero user
+          tracking beacons, and zero browsing data collection. Your online
+          activities remain 100% private.
         </p>
+
+        <!-- Developer Information Section -->
+        <section class="dev-card">
+          <div class="dev-avatar">👨‍💻</div>
+          <div class="dev-details">
+            <h3>Muzammil <span>&bull; Verified Developer</span></h3>
+            <div class="dev-role">Software AI Innovation Engineer</div>
+            <p class="dev-bio">
+              Passionate about engineering lightweight, performant browser
+              extensions that enhance everyday web productivity without
+              compromising user privacy or consuming unnecessary system
+              resources.
+            </p>
+            <div class="dev-contact">
+              Direct Contact & Support:
+              <a href="mailto:cmmuzammil999@gmail.com"
+                >cmmuzammil999@gmail.com</a
+              >
+            </div>
+          </div>
+        </section>
       </main>
 
       <!-- Bottom Footer -->
       <footer class="footer">
         <p>
-          &copy; 2026 SoundMax &bull; All Rights Reserved &bull;
-          <a href="#">Terms of Service</a>
+          &copy; 2026 SoundMax &bull; Developed by Muzammil &bull; All Rights
+          Reserved
         </p>
       </footer>
     </div>
-  
-  <!-- Lemon Squeezy Official Overlay Checkout Script -->
-  <script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>
-  <script>
-    window.addEventListener("DOMContentLoaded", function() {
-      // Check URL query parameters (e.g. ?pro=true or ?paid=true)
-      var params = new URLSearchParams(window.location.search);
-      if (params.get("pro") === "true" || params.get("paid") === "true") {
-        localStorage.setItem("soundmax_is_pro", "true");
-      }
 
-      function updateProUI() {
-        var isPro = localStorage.getItem("soundmax_is_pro") === "true";
-        var upgradeBtn = document.getElementById("headerUpgradeBtn");
-        var restoreBtn = document.getElementById("restoreProBtn");
-        var proPill = document.getElementById("proMemberPill");
-
-        if (isPro) {
-          if (upgradeBtn) upgradeBtn.style.display = "none";
-          if (restoreBtn) restoreBtn.style.display = "none";
-          if (proPill) proPill.style.display = "inline-flex";
-        } else {
-          if (upgradeBtn) upgradeBtn.style.display = "inline-flex";
-          if (restoreBtn) restoreBtn.style.display = "inline-block";
-          if (proPill) proPill.style.display = "none";
+    <!-- Lemon Squeezy Official Overlay Checkout Script -->
+    <script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>
+    <script>
+      (function () {
+        // 1. Detect Pro status from URL params (e.g. ?pro=true or ?paid=true)
+        var urlParams = new URLSearchParams(window.location.search);
+        if (
+          urlParams.get("pro") === "true" ||
+          urlParams.get("paid") === "true"
+        ) {
+          localStorage.setItem("soundmax_is_pro", "true");
         }
-      }
 
-      updateProUI();
+        // 2. Check if Pro status exists in client storage
+        var isPro = localStorage.getItem("soundmax_is_pro") === "true";
 
-      var restoreBtn = document.getElementById("restoreProBtn");
-      if (restoreBtn) {
-        restoreBtn.addEventListener("click", function() {
-          var input = prompt("Enter your SoundMax Pro License Key (or 'SOUNDMAXPRO'):");
-          if (input && input.trim().length > 0) {
-            localStorage.setItem("soundmax_is_pro", "true");
-            updateProUI();
-            alert("🎉 Confirmed! You are recognized as a Lifetime Pro Member in SoundMax.");
+        // 3. Optional extension handshake: Check if installed extension signals Pro
+        var extId = "lpcmoifcehchkeeiljndhcgdjijcmpdd";
+        if (
+          !isPro &&
+          window.chrome &&
+          chrome.runtime &&
+          chrome.runtime.sendMessage
+        ) {
+          try {
+            chrome.runtime.sendMessage(
+              extId,
+              { type: "CHECK_PRO_STATUS" },
+              function (response) {
+                if (chrome.runtime.lastError) {
+                  // Extension not responding or externally_connectable not enabled, normal fallback
+                  return;
+                }
+                if (response && response.isPro) {
+                  localStorage.setItem("soundmax_is_pro", "true");
+                  applyProUI(true);
+                }
+              },
+            );
+          } catch (e) {
+            // Ignore messaging errors
           }
-        });
-      }
-    });
-  </script>
-</body>
+        }
+
+        function applyProUI(proActive) {
+          var upgradeBtn = document.getElementById("navUpgradeBtn");
+          var proBadge = document.getElementById("navProBadge");
+          var proBanner = document.getElementById("proMemberBanner");
+
+          if (proActive) {
+            if (upgradeBtn) upgradeBtn.style.display = "none";
+            if (proBadge) proBadge.style.display = "inline-flex";
+            if (proBanner) proBanner.style.display = "block";
+          } else {
+            if (upgradeBtn) upgradeBtn.style.display = "inline-flex";
+            if (proBadge) proBadge.style.display = "none";
+            if (proBanner) proBanner.style.display = "none";
+          }
+        }
+
+        // Apply immediately upon load
+        applyProUI(isPro);
+      })();
+    </script>
+  </body>
 </html>
